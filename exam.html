@@ -1,16 +1,35 @@
-<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
 
-<div id="quote-box">
-    <div id="text">xxx</div>
-    <div id="author">author</div>
-    <button id="new-quote">new quote</button>
-    <a id="tweet-quote" href="http://twitter.com/intent/tweet?text='xxx'-author" target="_blank">tweet</a>
-</div>
+<head>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
 
-<script type="text/babel">
+<body>
+    <div id="root"></div>
 
-</script>
+    <script type="text/babel">
+        class QuoteBox extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            render() {
+                return (
+                    <div id="quote-box">
+                        <div id="text">xxx</div>
+                        <div id="author">author</div>
+                        <button id="new-quote">new quote</button>
+                        <a id="tweet-quote" href="http://twitter.com/intent/tweet?text='xxx'-author" target="_blank">tweet</a>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<QuoteBox />, document.getElementById('root'));
+    </script>
 
-<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+</body>
+
+</html>
