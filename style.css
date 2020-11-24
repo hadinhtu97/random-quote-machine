@@ -4,31 +4,11 @@ body {
 }
 
 #quote-box {
-    position: absolute;
-    top: 25%;
-    left: 30%;
+    margin: 0 auto;
     max-width: 500px;
     padding: 40px;
     background-color: white;
     border-radius: 20px;
-}
-
-@media (max-width: 900px) {
-    #quote-box {
-        left: 15%;
-    }
-}
-
-@media (max-width: 700px) {
-    #quote-box {
-        left: 5%;
-    }
-}
-
-@media (max-width: 500px) {
-    #quote-box {
-        left: 0%;
-    }
 }
 
 #text-section {
@@ -65,4 +45,5 @@ body {
 #tweet-quote {
     text-decoration: none;
     color: #1DA1F2;
+    outline: none;
 }
