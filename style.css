@@ -1,6 +1,9 @@
 body {
     margin: 0;
-    background-color: cyan;
+}
+
+hr {
+    border: 1px solid #dd4814;
 }
 
 #quote-box {
@@ -8,6 +11,7 @@ body {
     max-width: 500px;
     padding: 40px;
     background-color: white;
+    border: 2px solid #dd4814;
     border-radius: 20px;
 }
 
