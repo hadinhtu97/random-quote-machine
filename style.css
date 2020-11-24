@@ -40,10 +40,10 @@ hr {
 
 #new-quote {
     height: 30px;
-    border: none;
+    border: 1px solid cyan;
     outline: none;
     border-radius: 10px;
-    background-color: cyan;
+    background-color: white;
 }
 
 #tweet-quote {
