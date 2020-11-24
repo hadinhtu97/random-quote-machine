@@ -14,14 +14,80 @@
         class QuoteBox extends React.Component {
             constructor(props) {
                 super(props);
+                this.state = {
+                    currentQuote: {
+                        index: 0,
+                        text: 'Everybody has talent, but ability takes hard work.',
+                        author: 'Michael Jordan'
+                    },
+                    listQuotes: [
+                        {
+                            text: 'Everybody has talent, but ability takes hard work.',
+                            author: 'Michael Jordan'
+                        },
+                        {
+                            text: 'Computers are good at following instructions, but not at reading your mind.',
+                            author: 'Donald Knuth'
+                        },
+                        {
+                            text: 'Looking at code you wrote more than two weeks ago is like looking at code you are seeing for the first time.',
+                            author: 'Dan Hurvitz'
+                        },
+                        {
+                            text: 'There is no elevator to success, you have to take the stairs.',
+                            author: 'Zig Ziglar'
+                        },
+                        {
+                            text: 'Never confuse a single defeat with a final defeat.',
+                            author: 'F. Scott Fitzgerald'
+                        },
+                        {
+                            text: 'Forget safety. Live where you fear to live. Destroy your reputation. Be notorious.',
+                            author: 'Rumi'
+                        },
+                        {
+                            text: 'The Web as I envisaged it, we have not seen it yet. The future is still so much bigger than the past.',
+                            author: 'Tim Berners-Lee'
+                        },
+                        {
+                            text: 'It does not matter how slowly you go as long as you do not stop.',
+                            author: 'Confucius'
+                        },
+                        {
+                            text: 'If people never did silly things, nothing intelligent would ever get done.',
+                            author: 'Ludwig Wittgenstein'
+                        },
+                        {
+                            text: 'You must do the things you think you cannot do.',
+                            author: 'Eleanor Roosevelt'
+                        }
+                    ]
+                }
+                this.changeCurrentQuote = this.changeCurrentQuote.bind(this);
+            }
+            changeCurrentQuote() {
+                this.setState(state => {
+                    let randomIndex;
+                    do {
+                        randomIndex = Math.floor(Math.random() * state.listQuotes.length);
+                    } while (randomIndex == state.currentQuote.index);
+                    return {
+                        currentQuote: {
+                            index: randomIndex,
+                            text: state.listQuotes[randomIndex].text,
+                            author: state.listQuotes[randomIndex].author
+                        }
+                    }
+                })
             }
             render() {
+                let tweetQuote = 'http://twitter.com/intent/tweet?text="' + this.state.currentQuote.text + '" - ' + this.state.currentQuote.author;
                 return (
                     <div id="quote-box">
-                        <div id="text">xxx</div>
-                        <div id="author">author</div>
-                        <button id="new-quote">new quote</button>
-                        <a id="tweet-quote" href="http://twitter.com/intent/tweet?text='xxx'-author" target="_blank">tweet</a>
+                        <div id="text">"{this.state.currentQuote.text}"</div>
+                        <div id="author"> - {this.state.currentQuote.author}</div>
+                        <button id="new-quote" onClick={this.changeCurrentQuote}>new quote</button>
+                        <a id="tweet-quote" href={tweetQuote} target="_blank">tweet</a>
                     </div>
                 );
             }
