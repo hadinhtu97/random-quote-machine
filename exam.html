@@ -19,48 +19,59 @@
                     currentQuote: {
                         index: 0,
                         text: 'Everybody has talent, but ability takes hard work.',
-                        author: 'Michael Jordan'
+                        author: 'Michael Jordan',
+                        color: '#dd4814'
                     },
                     listQuotes: [
                         {
                             text: 'Everybody has talent, but ability takes hard work.',
-                            author: 'Michael Jordan'
+                            author: 'Michael Jordan',
+                            color: '#dd4814'
                         },
                         {
                             text: 'Computers are good at following instructions, but not at reading your mind.',
-                            author: 'Donald Knuth'
+                            author: 'Donald Knuth',
+                            color: 'red'
                         },
                         {
                             text: 'Looking at code you wrote more than two weeks ago is like looking at code you are seeing for the first time.',
-                            author: 'Dan Hurvitz'
+                            author: 'Dan Hurvitz',
+                            color: 'blue'
                         },
                         {
                             text: 'There is no elevator to success, you have to take the stairs.',
-                            author: 'Zig Ziglar'
+                            author: 'Zig Ziglar',
+                            color: 'green'
                         },
                         {
                             text: 'Never confuse a single defeat with a final defeat.',
-                            author: 'F. Scott Fitzgerald'
+                            author: 'F. Scott Fitzgerald',
+                            color: 'yellow'
                         },
                         {
                             text: 'Forget safety. Live where you fear to live. Destroy your reputation. Be notorious.',
-                            author: 'Rumi'
+                            author: 'Rumi',
+                            color: 'orange'
                         },
                         {
                             text: 'The Web as I envisaged it, we have not seen it yet. The future is still so much bigger than the past.',
-                            author: 'Tim Berners Lee'
+                            author: 'Tim Berners Lee',
+                            color: 'crimson'
                         },
                         {
                             text: 'It does not matter how slowly you go as long as you do not stop.',
-                            author: 'Confucius'
+                            author: 'Confucius',
+                            color: 'chocolate'
                         },
                         {
                             text: 'If people never did silly things, nothing intelligent would ever get done.',
-                            author: 'Ludwig Wittgenstein'
+                            author: 'Ludwig Wittgenstein',
+                            color: 'coral'
                         },
                         {
                             text: 'You must do the things you think you cannot do.',
-                            author: 'Eleanor Roosevelt'
+                            author: 'Eleanor Roosevelt',
+                            color: 'royalblue'
                         }
                     ]
                 }
@@ -76,22 +87,26 @@
                         currentQuote: {
                             index: randomIndex,
                             text: state.listQuotes[randomIndex].text,
-                            author: state.listQuotes[randomIndex].author
+                            author: state.listQuotes[randomIndex].author,
+                            color: state.listQuotes[randomIndex].color
                         }
                     }
                 })
             }
             render() {
                 let tweetQuote = 'http://twitter.com/intent/tweet?text="' + this.state.currentQuote.text + '" - ' + this.state.currentQuote.author;
+                let colorText = {
+                    color: this.state.currentQuote.color
+                }
                 return (
                     <div id="quote-box">
                         <div id="text-section">
-                            <div id="text">"{this.state.currentQuote.text}"</div>
+                            <div id="text" style={colorText}>"{this.state.currentQuote.text}"</div>
                             <div id="author"> - {this.state.currentQuote.author}</div>
                         </div>
                         <hr />
                         <div id="link-section">
-                            <button id="new-quote" onClick={this.changeCurrentQuote}>New quote</button>
+                            <button id="new-quote" style={colorText} onClick={this.changeCurrentQuote}>New quote</button>
                             <a id="tweet-quote" href={tweetQuote} target="_blank">Tweet!</a>
                         </div>
                     </div>

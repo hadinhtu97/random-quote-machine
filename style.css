@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #dd4814;
+    background-color: cyan;
 }
 
 #quote-box {
@@ -32,7 +32,8 @@ body {
 }
 
 #text-section {
-    padding-bottom: 20px;
+    margin-bottom: 30px;
+    background-color: white;
 }
 
 #text {
@@ -44,24 +45,21 @@ body {
     text-align: center;
     font-size: 25px;
     font-style: italic;
+    color: cyan;
 }
 
 #link-section {
     display: flex;
     justify-content: space-around;
-    padding-top: 30px;
+    margin-top: 30px;
 }
 
 #new-quote {
     height: 30px;
-    background-color: cyan;
     border: none;
     outline: none;
     border-radius: 10px;
-}
-
-#new-quote:hover {
-    background-color: #dd4814;
+    background-color: cyan;
 }
 
 #tweet-quote {
