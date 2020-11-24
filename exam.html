@@ -5,6 +5,7 @@
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -84,10 +85,15 @@
                 let tweetQuote = 'http://twitter.com/intent/tweet?text="' + this.state.currentQuote.text + '" - ' + this.state.currentQuote.author;
                 return (
                     <div id="quote-box">
-                        <div id="text">"{this.state.currentQuote.text}"</div>
-                        <div id="author"> - {this.state.currentQuote.author}</div>
-                        <button id="new-quote" onClick={this.changeCurrentQuote}>new quote</button>
-                        <a id="tweet-quote" href={tweetQuote} target="_blank">tweet</a>
+                        <div id="text-section">
+                            <div id="text">"{this.state.currentQuote.text}"</div>
+                            <div id="author"> - {this.state.currentQuote.author}</div>
+                        </div>
+                        <hr />
+                        <div id="link-section">
+                            <button id="new-quote" onClick={this.changeCurrentQuote}>New quote</button>
+                            <a id="tweet-quote" href={tweetQuote} target="_blank">Tweet!</a>
+                        </div>
                     </div>
                 );
             }
